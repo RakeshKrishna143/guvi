@@ -23,7 +23,13 @@ def depth(a):
         count+=1
         d,count=overcome(d,count)
         b.append(sorted(list(d.values())))
-    return b
+    e=[]
+    for i in b:
+        c=[]
+        for j in i:
+            c+=j 
+        e.append(sorted(c))
+    return e
     
 c=[]
 t=int(input())
@@ -32,10 +38,8 @@ for i in range(t):
     a=[]
     a = list(map(int,input().strip().split()))[:n] 
     c.append(depth(a))
-print(c)
 for i in c:
     for j in i:
         for k in j:
-            for l in k:
-                print(l,end=" ")
+            print(k,end=" ")
         print()
